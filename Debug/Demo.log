@@ -1,0 +1,7 @@
+﻿  plane.cpp
+c:\users\ernst\documents\visual studio 2015\projects\audiovisualizer\plane.h(20): warning C4091: 'static ': ignored on left of 'Plane' when no variable is declared
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  main.cpp
+  Demo.vcxproj -> C:\Users\Ernst\Documents\Visual Studio 2015\Projects\AudioVisualizer\Debug\AudioVisualizer.exe
+  Demo.vcxproj -> C:\Users\Ernst\Documents\Visual Studio 2015\Projects\AudioVisualizer\Debug\AudioVisualizer.pdb (Full PDB)
