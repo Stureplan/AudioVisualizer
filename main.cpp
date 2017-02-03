@@ -53,8 +53,8 @@ glm::mat4 model;
 glm::mat4 mvp;
 glm::mat4 rot;
 float h = 0.0f;
-int planeX = 10;
-int planeY = 10;
+int planeX = 20;
+int planeY = 20;
 
 std::vector<GLfloat> vertices;
 std::vector<GLfloat> colors;
@@ -96,7 +96,7 @@ void Initialize()
 	glUseProgram(shaders);
 
 	glClearColor(0.2f, 0.2f, 0.2f, 0.0f);
-
+	
 
 	proj = glm::perspective
 	(
@@ -108,7 +108,7 @@ void Initialize()
 
 	view = glm::lookAt
 	(
-		glm::vec3(0, 4, 7),
+		glm::vec3(0, 8, 15),
 		glm::vec3(0, 0, 0),
 		glm::vec3(0, 1, 0)
 	);
@@ -122,9 +122,8 @@ void Initialize()
 	mvp = proj * view * model;
 
 	rot = glm::mat4(1.0f);
-	rot = glm::rotate(rot, 90.0f, glm::vec3(1, 0, 0));
+	rot = glm::rotate(rot, 90.0f, glm::vec3(0, 1, 0));
 
-	
 	u_matrix = glGetUniformLocation(shaders, "MVP");
 	u_height = glGetUniformLocation(shaders, "height");
 }
@@ -169,6 +168,8 @@ void Render (double dT)
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vIndexBuffer);
 	glDrawElements(GL_TRIANGLE_STRIP, indices.size(), GL_UNSIGNED_INT, (void*)0);
+	glPointSize(4.0f);
+	glDrawArrays(GL_POINTS, 0, indices.size());
 
 	//glLineWidth(3.0f);
 	//glDrawArrays(GL_LINE_STRIP, 0, vertices.size());

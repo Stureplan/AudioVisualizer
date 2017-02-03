@@ -1,8 +1,11 @@
 #ifndef PLANE_H
 #define PLANE_H
 
+#include <stdio.h>
 #include <vector>
 #include <GL/glew.h>
+#include <random>
+
 
 static class Plane
 {

@@ -4,6 +4,7 @@ layout(location = 0) in vec3 vertex_position;
 layout(location = 1) in vec3 vertex_color;
 		
 out vec4 color_frag;
+out float y;
 
 uniform mat4 MVP;
 uniform float height;
@@ -27,5 +28,8 @@ void main ()
 	//color_frag = vertex_color;
 	color_frag = mix(minColor, maxColor, pos.y / 2.0f + 0.5f);
 	//color_frag.w += max(pos.y, 0.05f);
-	color_frag.xyz += max(vec3(0.1f, pos.y, pos.y),vec3(0.1f, 0.1f, 0.1f));
+	//color_frag.xyz += max(vec3(0.1f, pos.y, pos.y),vec3(0.1f, 0.1f, 0.1f));
+
+
+	y = pos.y;
 }

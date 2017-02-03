@@ -8,21 +8,24 @@ void Plane::Create
 	int sizeX, int sizeY
 )
 {
-	int m = v.capacity();
+	float h = 0;
 
 	for (int x = 0; x < sizeX; x++)
 	{
+
 		for (int y = 0; y < sizeY; y++)
 		{
 			int index = x * sizeY + y;
 
+
 			v[3 * index + 0] = (float)x;
-			v[3 * index + 1] = 0;
+			v[3 * index + 1] = h;
 			v[3 * index + 2] = (float)y;
 
 
 			float r1 = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
 			float r2 = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+
 			c[3 * index + 0] = 0;
 			c[3 * index + 1] = r1;
 			c[3 * index + 2] = r2;
